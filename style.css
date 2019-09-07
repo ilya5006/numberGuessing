@@ -4,3 +4,44 @@
     padding: 0px;
     font-family: 'Playfair Display', serif;
 }
+
+#wrapper
+{
+    margin-top: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button
+{
+    padding: 60px 30px;
+    font-weight: bold;
+    font-size: 120px;
+    border: 0px;
+    transition: 0.4s;
+}
+
+button:hover
+{
+    cursor: pointer;
+    background-color: #c8c8c8;
+}
+
+p
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+span
+{
+    font-size: 86px;
+}
+
+#number_current
+{
+    font-size: 36px;
+}
