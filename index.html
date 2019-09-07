@@ -10,11 +10,18 @@
 </head>
 <body>
     <div id="wrapper">
-        <button id="button_less"><</button>
-        <p id="number_less"><span id="less_value">0</span>меньше</p>
-        <p id="number_current"><span id="current_value">0</span>текущее</p>
-        <p id="number_more"><span id="more_value">0</span>больше</p>
-        <button id="button_more">></button>
+        <div id="inputs">
+            <input type="text" id="minimum_input_number" value="1">
+            <input type="text" id="maximum_input_number" value="100">
+        </div>
+
+        <div id="main">
+            <button id="button_less"><</button>
+            <p id="number_less"><span id="less_value">0</span>меньше</p>
+            <p id="number_current"><span id="current_value">0</span>текущее</p>
+            <p id="number_more"><span id="more_value">0</span>больше</p>
+            <button id="button_more">></button>
+        </div>
     </div>
 
     <script src="script.js"></script>
