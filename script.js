@@ -17,7 +17,7 @@ let updateArray = (minimum, maximum) =>
         arrayOfNums.push(i);
 }
 
-let generateIndexes = () =>
+let updateIndexes = () =>
 {
     minimumIndex = 0;
     middleIndex = Math.round((arrayOfNums.length - 1) / 2);
@@ -33,15 +33,15 @@ let updateValues = () =>
 
 let arrayOfNums;
 
-let minimum = Number(numberInputs[0].value);
-let maximum = Number(numberInputs[1].value);
-
 let minimumIndex;
 let middleIndex;
 let maximumIndex;
 
+let minimum = Number(numberInputs[0].value);
+let maximum = Number(numberInputs[1].value);
+
 updateArray(minimum, maximum);
-generateIndexes(arrayOfNums);
+updateIndexes(arrayOfNums);
 updateValues();
 
 // Добавляем ивенты для изменения значений
@@ -54,7 +54,7 @@ for (let i = 0; i < numberInputs.length; i++)
 
         updateArray(minimum, maximum);
         
-        generateIndexes(arrayOfNums);
+        updateIndexes(arrayOfNums);
         
         updateValues();
     });
