@@ -1,8 +1,9 @@
 // Инициализируем dom-элементы, с которыми будем работать
 let numberInputs = document.querySelectorAll('input');
 
-let buttonLess = document.querySelector('#button_less');
-let buttonMore = document.querySelector('#button_more');
+// let buttonLess = document.querySelector('#button_less');
+// let buttonMore = document.querySelector('#button_more');
+let buttons = document.querySelectorAll('button');
 let lessValue = document.querySelector('#less_value');
 let currentValue = document.querySelector('#current_value');
 let moreValue = document.querySelector('#more_value');
@@ -46,9 +47,8 @@ updateValues();
 // Добавляем ивенты для изменения значений
 for (let i = 0; i < numberInputs.length; i++)
 {
-    numberInputs[i].addEventListener('input', (event) => 
+    numberInputs[i].addEventListener('input', () => 
     {
-        event.preventDefault();
         minimum = Number(numberInputs[0].value);
         maximum = Number(numberInputs[1].value);
 
@@ -60,18 +60,36 @@ for (let i = 0; i < numberInputs.length; i++)
     });
 }
 
-buttonLess.addEventListener('click', () =>
+for (let i = 0; i < buttons.length; i++)
 {
-    maximumIndex = middleIndex;
-    middleIndex = Math.floor((maximumIndex + minimumIndex) / 2);
+    buttons[i].addEventListener('click', () =>
+    {
+        let isLessButton = buttons[i].innerHTML == '&lt;';
+        let isMoreButton = buttons[i].innerHTML == '&gt;';
+        
+        if (isLessButton)
+            maximumIndex = middleIndex;
+        if (isMoreButton)
+            minimumIndex = middleIndex;
 
-    updateValues();
-});
+        middleIndex = Math.round((minimumIndex + maximumIndex) / 2);
 
-buttonMore.addEventListener('click', () =>
-{
-    minimumIndex = middleIndex;
-    middleIndex = Math.round((maximumIndex + minimumIndex) / 2);
+        updateValues();
+    });
+}
 
-    updateValues();
-});
+// buttonLess.addEventListener('click', () =>
+// {
+//     maximumIndex = middleIndex;
+//     middleIndex = Math.floor((maximumIndex + minimumIndex) / 2);
+
+//     updateValues();
+// });
+
+// buttonMore.addEventListener('click', () =>
+// {
+//     minimumIndex = middleIndex;
+//     middleIndex = Math.round((maximumIndex + minimumIndex) / 2);
+
+//     updateValues();
+// });
