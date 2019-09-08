@@ -20,7 +20,7 @@ let updateArray = (minimum, maximum) =>
 let updateIndexes = () =>
 {
     minimumIndex = 0;
-    middleIndex = Math.round((arrayOfNums.length - 1) / 2);
+    middleIndex = Math.floor((arrayOfNums.length - 1) / 2);
     maximumIndex = arrayOfNums.length - 1;
 }
 
