@@ -75,11 +75,11 @@ for (let i = 0; i < buttons.length; i++)
         middleIndex = Math.round((minimumIndex + maximumIndex) / 2);
 
         // Анимация
-        $('p').fadeOut(200, () =>
+        $('span').slideUp(100, () =>
         {
             updateValues();
             
-            $('p').fadeIn(200);
+            $('span').slideDown(100);
         });
     });
 }
