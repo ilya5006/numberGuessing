@@ -41,7 +41,7 @@ let minimum = Number(numberInputs[0].value);
 let maximum = Number(numberInputs[1].value);
 
 updateArray(minimum, maximum);
-updateIndexes(arrayOfNums);
+updateIndexes();
 updateValues();
 
 // Добавляем ивенты для изменения значений
@@ -54,7 +54,7 @@ for (let i = 0; i < numberInputs.length; i++)
 
         updateArray(minimum, maximum);
         
-        updateIndexes(arrayOfNums);
+        updateIndexes();
         
         updateValues();
     });
@@ -74,7 +74,13 @@ for (let i = 0; i < buttons.length; i++)
 
         middleIndex = Math.round((minimumIndex + maximumIndex) / 2);
 
-        updateValues();
+        // Анимация
+        $('p').fadeOut(200, () =>
+        {
+            updateValues();
+            
+            $('p').fadeIn(200);
+        });
     });
 }
 
