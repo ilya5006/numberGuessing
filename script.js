@@ -3,7 +3,7 @@ let numberInputs = document.querySelectorAll('input');
 
 // let buttonLess = document.querySelector('#button_less');
 // let buttonMore = document.querySelector('#button_more');
-let buttons = document.querySelectorAll('button');
+let lessMoreButtons = document.querySelectorAll('button');
 let lessValue = document.querySelector('#less_value');
 let currentValue = document.querySelector('#current_value');
 let moreValue = document.querySelector('#more_value');
@@ -60,12 +60,12 @@ for (let i = 0; i < numberInputs.length; i++)
     });
 }
 
-for (let i = 0; i < buttons.length; i++)
+for (let i = 0; i < lessMoreButtons.length; i++)
 {
-    buttons[i].addEventListener('click', () =>
+    lessMoreButtons[i].addEventListener('click', () =>
     {
-        let isLessButton = buttons[i].innerHTML == '&lt;';
-        let isMoreButton = buttons[i].innerHTML == '&gt;';
+        let isLessButton = lessMoreButtons[i].innerHTML == '&lt;';
+        let isMoreButton = lessMoreButtons[i].innerHTML == '&gt;';
         
         if (isLessButton)
             maximumIndex = middleIndex;
