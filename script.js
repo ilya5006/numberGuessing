@@ -72,7 +72,7 @@ for (let i = 0; i < lessMoreButtons.length; i++)
         if (isMoreButton)
             minimumIndex = middleIndex;
 
-        middleIndex = Math.round((minimumIndex + maximumIndex) / 2);
+        middleIndex = Math.floor((minimumIndex + maximumIndex) / 2);
 
         // Анимация
         $('span').slideUp(100, () =>
